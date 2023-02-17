@@ -13,7 +13,7 @@ spec:
       tty: true
       volumeMounts:
         - name: m2
-          mountPath: /root/.m2
+          mountPath: /Users/zhangjie/devops/jenkins/pipeline/.m2
     - name: docker
       image: docker:20.10.14
       command:
@@ -22,16 +22,16 @@ spec:
       privileged: true
       volumeMounts:
         - name: dockersock
-          mountPath: /var/run/docker.sock
+          mountPath: /Users/zhangjie/devops/jenkins/pipeline/run/docker.sock
     - name: helm
-      image: lachlanevenson/k8s-helm
+      image: lachlanevenson/k8s-helm:v3.10.2
       command:
         - cat
       tty: true
   volumes:
     - name: dockersock
       hostPath:
-        path: /var/run/docker.sock
+        path: /Users/zhangjie/devops/jenkins/pipeline/run/docker.sock
     - name: m2
       hostPath:
-        path: /root/.m2
+        path: /Users/zhangjie/devops/jenkins/pipeline/.m2
