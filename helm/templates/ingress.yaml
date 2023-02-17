@@ -1,0 +1,25 @@
+{{- if .Values.ingress.enabled -}}
+{{- $name := .Values.name -}}
+{{- $hostname := printf "%s.%s" .Values.name .Values.domain -}}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ $name }}-ingress
+  {{- with .Values.ingress.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  rules:
+    {{- range .Values.ingress.hosts }}
+  - host: {{ $hostname | quote }}
+    http:
+      paths:
+      {{- range .paths }}
+      - path: {{ . }}
+        backend:
+          serviceName: {{ $name }}-service
+          servicePort: http
+      {{- end }}
+    {{- end }}
+{{- end }}
