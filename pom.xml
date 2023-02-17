@@ -27,5 +27,8 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <finalName>k8s-example-demo</finalName>
+    </build>
 
 </project>
