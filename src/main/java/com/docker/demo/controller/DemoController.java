@@ -10,7 +10,7 @@ public class DemoController {
 
     @RequestMapping("/home")
     public String home() {
-        log.info("Hello Docker World");
+        log.info("Hello Docker World test");
         return "Hello Docker World";
     }
 }

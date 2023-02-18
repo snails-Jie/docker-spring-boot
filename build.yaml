@@ -12,7 +12,7 @@ spec:
         requests:
           cpu: "2000m"
         limits:
-          cpu: "4000m"
+          cpu: "3000m"
       command:
         - cat
       tty: true
