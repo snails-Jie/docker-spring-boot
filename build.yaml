@@ -14,6 +14,11 @@ spec:
       volumeMounts:
         - name: m2
           mountPath: /Users/zhangjie/.m2/repository
+      resources:
+        requests:
+          cpu: "500m"
+        limits:
+          cpu: "1000m"
     - name: docker
       image: docker:20.10.14
       command:
