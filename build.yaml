@@ -10,9 +10,9 @@ spec:
       image: maven:3.3.9-jdk-8-alpine
       resources:
         requests:
-          cpu: "4000m"
+          cpu: "2000m"
         limits:
-          cpu: "8000m"
+          cpu: "4000m"
       command:
         - cat
       tty: true
