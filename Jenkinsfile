@@ -17,7 +17,8 @@ pipeline {
         stage('Build') {
             steps {
                 container('maven') {
-                    sh 'mvn package'
+                    echo '编译项目'
+                    sh 'mvn clean package -s "/Users/zhangjie/maven/apache-maven-3.8.4/conf/settings.xml" -Dmaven.test.skip=true'
                 }
             }
         }

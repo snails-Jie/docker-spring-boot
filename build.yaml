@@ -13,7 +13,7 @@ spec:
       tty: true
       volumeMounts:
         - name: m2
-          mountPath: /Users/zhangjie/devops/jenkins/pipeline/.m2
+          mountPath: /Users/zhangjie/.m2/repository
     - name: docker
       image: docker:20.10.14
       command:
@@ -34,4 +34,4 @@ spec:
         path: /Users/zhangjie/devops/jenkins/pipeline/run/docker.sock
     - name: m2
       hostPath:
-        path: /Users/zhangjie/devops/jenkins/pipeline/.m2
+        path: /Users/zhangjie/.m2/repository
