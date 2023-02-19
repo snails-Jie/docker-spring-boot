@@ -22,7 +22,7 @@ spec:
       privileged: true
       volumeMounts:
         - name: dockersock
-          mountPath: /Users/zhangjie/devops/jenkins/pipeline/run/docker.sock
+          mountPath: /var/run/docker.sock
     - name: helm
       image: lachlanevenson/k8s-helm:v3.10.2
       command:
@@ -31,7 +31,7 @@ spec:
   volumes:
     - name: dockersock
       hostPath:
-        path: /Users/zhangjie/devops/jenkins/pipeline/run/docker.sock
+        path: /var/run/docker.sock
     - name: m2
       hostPath:
         path: /Users/zhangjie/.m2/repository
