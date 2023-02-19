@@ -1,5 +1,5 @@
 image:
-  repository: henry/k8s-jenkins-example
+  repository: 731255090/k8s-jenkins-examplee
   tag: latest
   pullPolicy: Always
 
